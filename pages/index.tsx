@@ -6,10 +6,10 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Create Next App</title>
+        <title>CatWiki</title>
         <link rel="icon" href="/devchallenges.png" />
       </Head>
-      <div className="hero">
+      <section className="hero">
         <img
           src="/CatwikiLogo.svg"
           aria-hidden="true"
@@ -17,10 +17,10 @@ const Home: NextPage = () => {
           className="w-auto brightness-0 invert md:h-20"
         />
 
-        <p className="text-white text-xs md:text-2xl my-1">
+        <h1 className="text-white text-xs md:text-2xl my-1">
           Get to know more about your{" "}
           <span className="md:block">cat breed</span>
-        </p>
+        </h1>
         <form className="mx-2 sm:mx-0 lg:w-80 py-2 px-3.5 rounded-full bg-white flex items-center">
           <input
             className="w-full focus:outline-none"
@@ -43,7 +43,8 @@ const Home: NextPage = () => {
             />
           </svg>
         </form>
-      </div>
+      </section>
+      <section></section>
     </>
   );
 };
