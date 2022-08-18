@@ -76,6 +76,7 @@ $ npm start
 - [Search Bar with suggestions](https://youtu.be/Jd7s7egjt30)
 - [Node.js](https://nodejs.org/)
 - [Playing with border-radius and scroll bars](https://codepen.io/M_J_Robbins/pen/DgRvOa)
+- [You are reading environment variables the wrong way in Next.js](https://dev.to/austinshelby/you-are-reading-environment-variables-the-wrong-way-in-nextjs-45da)
 
 ## Contact
 
