@@ -73,9 +73,9 @@ $ npm start
 
 ## Acknowledgements
 
-- [Steps to replicate a design with only HTML and CSS](https://devchallenges-blogs.web.app/how-to-replicate-design/)
+- [Search Bar with suggestions](https://youtu.be/Jd7s7egjt30)
 - [Node.js](https://nodejs.org/)
-- [Marked - a markdown parser](https://github.com/chjj/marked)
+- [Playing with border-radius and scroll bars](https://codepen.io/M_J_Robbins/pen/DgRvOa)
 
 ## Contact
 
