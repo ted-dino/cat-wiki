@@ -11,4 +11,13 @@
   .hero {
     @apply md:pl-20 lg:pl-24 xl:pl-40 bg-[#080c0e] h-40 md:bg-[url('/HeroImage.png')] bg-right bg-contain bg-no-repeat md:h-[300px] lg:h-[400px] xl:h-[500px] rounded-t-[40px] flex flex-col justify-center items-center md:items-start;
   }
+  .breeds {
+    @apply bg-[#E3E1DC]  rounded-b-[40px];
+  }
+  .sectionPadding {
+    @apply py-5 px-7 md:px-20 lg:px-24 xl:px-40;
+  }
+  .breedSubText {
+    @apply relative text-xs before:block before:absolute before:w-[40px] before:h-1 before:md:w-[60px] before:inset-x-0 before:-bottom-2 before:bg-[#4D270C] before:rounded-3xl;
+  }
 }
