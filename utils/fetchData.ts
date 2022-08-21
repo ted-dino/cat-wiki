@@ -1,7 +1,7 @@
-import { Breed } from "../typings";
+import { Cat } from "../typings";
 import { config } from "./config";
 
-export const getAllBreed = async (): Promise<Breed> => {
+export const getAllBreed = async (): Promise<Cat> => {
   const result = await fetch(
     "https://api.thecatapi.com/v1/breeds?attach_breed=0",
     {
@@ -9,18 +9,5 @@ export const getAllBreed = async (): Promise<Breed> => {
     }
   );
   const data = result.json();
-  return data;
-};
-
-export const searchBreed = async (breed: string): Promise<Breed> => {
-  const result = await fetch(
-    `https://api.thecatapi.com/v1/breeds/search?q=${breed}`,
-    {
-      headers: {
-        "X-API-KEY": config.apiKey,
-      },
-    }
-  );
-  const data = await result.json();
   return data;
 };
