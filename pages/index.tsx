@@ -146,7 +146,7 @@ const Home: NextPage<Props> = ({ breeds }) => {
             </a>
           </Link>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 place-items-center">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-12 place-items-center items-center">
           {breeds.length > 0 &&
             featureBreeds &&
             featureBreeds.length > 0 &&
@@ -164,7 +164,7 @@ const Home: NextPage<Props> = ({ breeds }) => {
                   objectFit="cover"
                   className="rounded-3xl flex-1"
                 />
-                <span className="block text-lg font-semibold mt-3 md:mt-5">
+                <span className="block text-xs md:text-lg font-semibold mt-3 md:mt-5">
                   {`${cat.name}`}
                 </span>
               </div>
