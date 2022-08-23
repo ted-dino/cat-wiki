@@ -6,12 +6,14 @@ const Footer = () => {
   return (
     <footer className="p-4 md:p-9 bg-black rounded-t-[40px] flex flex-wrap items-center justify-center md:justify-between">
       <Link href="#top">
-        <Image
-          src="/CatwikiLogo.svg"
-          width={123}
-          height={43}
-          className="brightness-0 invert"
-        />
+        <a>
+          <Image
+            src="/CatwikiLogo.svg"
+            width={123}
+            height={43}
+            className="brightness-0 invert"
+          />
+        </a>
       </Link>
       <span className="text-white text-center">
         created by{" "}
