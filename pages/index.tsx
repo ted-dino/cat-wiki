@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChangeEvent, useEffect, useRef, useState } from "react";
 import { Cat } from "../typings";
-import { getAllBreed } from "../utils/fetchData";
 
 interface Props {
   breeds: Cat[];
@@ -131,7 +130,7 @@ const Home: NextPage<Props> = ({ breeds }) => {
             {breeds.length}+ Breeds For you{" "}
             <span className="md:block">to discover</span>
           </h2>
-          <Link href="/cats/[page]">
+          <Link href="/">
             <a className="flex items-center gap-2 text-xs text-black/60 font-bold">
               SEE MORE
               <svg
@@ -238,10 +237,11 @@ const Home: NextPage<Props> = ({ breeds }) => {
 };
 
 export const getStaticProps = async () => {
-  const breeds = await getAllBreed();
+  const res = await fetch("http://localhost:3000/api/cats");
+  const breeds = await res.json();
   return {
     props: {
-      breeds: breeds,
+      breeds,
     },
   };
 };
