@@ -77,6 +77,8 @@ $ npm start
 - [Playing with border-radius and scroll bars](https://codepen.io/M_J_Robbins/pen/DgRvOa)
 - [You are reading environment variables the wrong way in Next.js](https://dev.to/austinshelby/you-are-reading-environment-variables-the-wrong-way-in-nextjs-45da)
 - [React onclick Argument of type EventTarget](https://stackoverflow.com/questions/71193818/react-onclick-argument-of-type-eventtarget-is-not-assignable-to-parameter-of-t)
+- [Initialize Array Length](https://stackoverflow.com/questions/4852017/how-to-initialize-an-arrays-length-in-javascript)
+- [Using the fill() Method in JavaScript](https://www.delftstack.com/howto/javascript/javascript-create-array-of-length/#creates-an-array-of-length-using-the-fill-method-in-javascript)
 
 ## Contact
 
