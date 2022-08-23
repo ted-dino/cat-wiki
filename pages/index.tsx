@@ -106,13 +106,14 @@ const Home: NextPage<Props> = ({ breeds }) => {
                 {breed &&
                   breeds.length > 0 &&
                   filteredBreed.map((item) => (
-                    <li
-                      onClick={() => onSearch(item.name)}
-                      className="mr-2 text-lg hover:bg-[#979797]/10 py-2 px-4 rounded-xl cursor-pointer"
-                      key={item.id}
-                    >
-                      {item.name}
-                    </li>
+                    <Link key={item.id} href={`/cat/${item.name}`}>
+                      <li
+                        onClick={() => onSearch(item.name)}
+                        className="mr-2 text-lg hover:bg-[#979797]/10 py-2 px-4 rounded-xl cursor-pointer"
+                      >
+                        {item.name}
+                      </li>
+                    </Link>
                   ))}
               </ul>
             </div>
@@ -126,7 +127,7 @@ const Home: NextPage<Props> = ({ breeds }) => {
             {breeds.length}+ Breeds For you{" "}
             <span className="md:block">to discover</span>
           </h2>
-          <Link href="/">
+          <Link href="/cats/[page]">
             <a className="flex items-center gap-2 text-xs text-black/60 font-bold">
               SEE MORE
               <svg
