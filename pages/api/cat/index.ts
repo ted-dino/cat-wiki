@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
-import { Cat } from "../../typings";
-import { config } from "../../utils/config";
+import { Cat } from "../../../typings";
+import { config } from "../../../utils/config";
 
 export default async function handler(
   req: NextApiRequest,
