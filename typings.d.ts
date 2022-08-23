@@ -2,9 +2,9 @@ export interface Cat {
   weight: Weight;
   id: string;
   name: string;
-  cfa_url: string;
-  vetstreet_url: string;
-  vcahospitals_url: string;
+  cfa_url?: string;
+  vetstreet_url?: string;
+  vcahospitals_url?: string;
   temperament: string;
   origin: string;
   country_codes: string;
@@ -12,8 +12,8 @@ export interface Cat {
   description: string;
   life_span: string;
   indoor: number;
-  lap: number;
-  alt_names: string;
+  lap?: number;
+  alt_names?: string;
   adaptability: number;
   affection_level: number;
   child_friendly: number;
@@ -33,20 +33,29 @@ export interface Cat {
   rex: number;
   suppressed_tail: number;
   short_legs: number;
-  wikipedia_url: string;
+  wikipedia_url?: string;
   hypoallergenic: number;
-  reference_image_id: string;
-  image: Image;
+  reference_image_id?: string;
+  image?: Image;
+  cat_friendly?: number;
+  bidability?: number;
 }
 
-interface Image {
+export interface Image {
   id: string;
   width: number;
   height: number;
   url: string;
 }
 
-interface Weight {
+export interface Weight {
   imperial: string;
   metric: string;
+}
+
+export interface CatImg {
+  id: string;
+  url: string;
+  width: number;
+  height: number;
 }
