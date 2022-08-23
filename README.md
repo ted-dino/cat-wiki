@@ -79,6 +79,7 @@ $ npm start
 - [React onclick Argument of type EventTarget](https://stackoverflow.com/questions/71193818/react-onclick-argument-of-type-eventtarget-is-not-assignable-to-parameter-of-t)
 - [Initialize Array Length](https://stackoverflow.com/questions/4852017/how-to-initialize-an-arrays-length-in-javascript)
 - [Using the fill() Method in JavaScript](https://www.delftstack.com/howto/javascript/javascript-create-array-of-length/#creates-an-array-of-length-using-the-fill-method-in-javascript)
+- [Replacing elements using JavaScript Array splice() method](https://www.javascripttutorial.net/javascript-array-splice/#:~:text=replacing%20elements%20using%20javascript%20array%20splice()%20method)
 
 ## Contact
 
