@@ -13,6 +13,7 @@ interface Props {
 const Home: NextPage<Props> = ({ breeds }) => {
   const [breed, setBreed] = useState("");
   const [showDropdown, setShowDropdown] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [featureBreeds, setFeaturedBreed] = useState<Cat[] | null>();
   const dropdown = useRef<HTMLDivElement>(null);
 
@@ -72,7 +73,10 @@ const Home: NextPage<Props> = ({ breeds }) => {
           Get to know more about your{" "}
           <span className="md:block">cat breed</span>
         </h1>
-        <form className="mx-2 sm:mx-0 lg:w-80 py-2 px-5 rounded-full bg-white relative">
+        <form
+          onSubmit={(e) => e.preventDefault()}
+          className="mx-2 sm:mx-0 lg:w-80 py-2 px-5 rounded-full bg-white relative"
+        >
           <div className="flex items-center ">
             <input
               className="w-full focus:outline-none py-1 px-2"
@@ -147,7 +151,7 @@ const Home: NextPage<Props> = ({ breeds }) => {
             </a>
           </Link>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-12 place-items-center items-center">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-12 place-items-center">
           {breeds.length > 0 &&
             featureBreeds &&
             featureBreeds.length > 0 &&
@@ -166,7 +170,9 @@ const Home: NextPage<Props> = ({ breeds }) => {
                   className="rounded-3xl flex-1"
                 />
                 <span className="block text-xs md:text-lg font-semibold mt-3 md:mt-5">
-                  {`${cat.name}`}
+                  <Link href={`/cat/${cat.name}`}>
+                    <a>{`${cat.name}`}</a>
+                  </Link>
                 </span>
               </div>
             ))}
