@@ -12,7 +12,6 @@ interface Props {
 const Home: NextPage<Props> = ({ breeds }) => {
   const [breed, setBreed] = useState("");
   const [showDropdown, setShowDropdown] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
   const [featureBreeds, setFeaturedBreed] = useState<Cat[] | null>();
   const dropdown = useRef<HTMLDivElement>(null);
 
@@ -156,18 +155,23 @@ const Home: NextPage<Props> = ({ breeds }) => {
             featureBreeds.length > 0 &&
             featureBreeds.map((cat) => (
               <div key={cat.id} className="w-full flex flex-col">
-                <Image
-                  src={`${
-                    cat.image && cat.image.url
-                      ? cat.image.url
-                      : "/fallbackImg.webp"
-                  }`}
-                  width={220}
-                  height={220}
-                  alt="meow"
-                  objectFit="cover"
-                  className="rounded-3xl flex-1"
-                />
+                <Link href={`/cat/${cat.name}`}>
+                  <a className="cursor-pointer">
+                    <Image
+                      src={`${
+                        cat.image && cat.image.url
+                          ? cat.image.url
+                          : "/fallbackImg.webp"
+                      }`}
+                      width={220}
+                      height={220}
+                      alt="meow"
+                      objectFit="cover"
+                      objectPosition="center"
+                      className="rounded-3xl flex-1"
+                    />
+                  </a>
+                </Link>
                 <span className="block text-xs md:text-lg font-semibold mt-3 md:mt-5">
                   <Link href={`/cat/${cat.name}`}>
                     <a>{`${cat.name}`}</a>
