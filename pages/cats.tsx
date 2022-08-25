@@ -24,7 +24,7 @@ const Cats = ({ noOfPages, cats }: Props) => {
   for (let i = 0; i <= pageNumber / ITEMS_PER_PAGE; i++) {
     pages.push(i);
   }
-  console.log(cats);
+
   const nextPage = () => {
     setCurrentPage(currentPage + 1);
     router.push(`/cats?page=${currentPage + 1}`);
@@ -54,35 +54,47 @@ const Cats = ({ noOfPages, cats }: Props) => {
 
   return (
     <>
-      <h1 className="text-xl sm:text-3xl md:text-4xl font-semibold">
+      <h1 className="text-xl sm:text-3xl md:text-4xl font-bold">
         List of Cat Breeds
       </h1>
-      <div className="my-4 flex-1 flex flex-col justify-between ">
+      <div className="my-4 flex-1 flex flex-col gap-10">
         {paginatedCats &&
           paginatedCats.length > 0 &&
           paginatedCats.map((cat) => (
-            <div key={cat.id} className="flex">
-              <Image
-                src={`${
-                  cat.image && cat.image.url
-                    ? cat.image.url
-                    : "/fallbackImg.webp"
-                }`}
-                width={170}
-                height={170}
-                alt="meow"
-                objectFit="cover"
-                objectPosition="center"
-                className="rounded-3xl flex-1"
-              />
-              <div>
-                <h2>{cat.name}</h2>
-                <p className="max-w-[888px]">{cat.description}</p>
+            <div key={cat.id} className="flex flex-col md:gap-10 md:flex-row">
+              <div className="w-full max-w-[170px]">
+                <Link href={`${cat.wikipedia_url}`}>
+                  <a className="flex-1 ">
+                    <Image
+                      src={`${
+                        cat.image && cat.image.url
+                          ? cat.image.url
+                          : "/fallbackImg.webp"
+                      }`}
+                      width={170}
+                      height={170}
+                      alt="meow"
+                      objectFit="cover"
+                      objectPosition="center"
+                      className="rounded-3xl opacity-100 hover:opacity-50"
+                    />
+                  </a>
+                </Link>
+              </div>
+              <div className="max-w-[50rem]">
+                <Link href={`/cat/${cat.name}`}>
+                  <a>
+                    <h2 className="text-lg md:text-xl font-semibold hover:underline">
+                      {cat.name}
+                    </h2>
+                  </a>
+                </Link>
+                <p>{cat.description}</p>
               </div>
             </div>
           ))}
       </div>
-      <div className="flex self-end items-center">
+      <div className="flex self-end items-center mt-10 mb-5">
         {currentPage !== 0 && (
           <button className="previousPage cursor-pointer" onClick={prevPage}>
             <svg
@@ -104,12 +116,11 @@ const Cats = ({ noOfPages, cats }: Props) => {
           if (number < maxPageNumber + 1 && number > minPageNumber) {
             return (
               <button
+                key={number}
                 onClick={pageClick}
                 id={number.toString()}
                 className={`${
-                  currentPage === number
-                    ? "bg-primary text-white hover:text-white"
-                    : "text-accent hover:text-primary"
+                  currentPage === number ? "bg-slate-200" : "text-black"
                 } text-xs border py-2.5 px-4 rounded hover:border-primary  cursor-pointer`}
               >
                 {number}
