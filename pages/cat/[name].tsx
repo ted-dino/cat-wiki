@@ -104,7 +104,9 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     fetch(
       `https://api.thecatapi.com/v1/images/search?limit=9&name=${name}&size=thumb`
     ).then((res) => res.json()),
-    fetch(`http://localhost:3000/api/cat/${name}`).then((res) => res.json()),
+    fetch(`https://cat-wiki-ten.vercel.app/api/cat/${name}`).then((res) =>
+      res.json()
+    ),
   ]);
 
   if (cat.length === 0 || !cat) {

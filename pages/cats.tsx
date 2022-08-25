@@ -154,8 +154,10 @@ const Cats = ({ noOfPages, cats }: Props) => {
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const page = context.query.page ? context.query.page : 0;
   const [noOfPages, cats] = await Promise.all([
-    fetch("http://localhost:3000/api/cat").then((res) => res.json()),
-    fetch(`http://localhost:3000/api/cats/${page}`).then((res) => res.json()),
+    fetch("https://cat-wiki-ten.vercel.app/api/cat").then((res) => res.json()),
+    fetch(`https://cat-wiki-ten.vercel.app/api/cats/${page}`).then((res) =>
+      res.json()
+    ),
   ]);
 
   return {

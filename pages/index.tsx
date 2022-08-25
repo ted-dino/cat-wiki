@@ -241,7 +241,7 @@ const Home: NextPage<Props> = ({ breeds }) => {
 };
 
 export const getStaticProps = async () => {
-  const res = await fetch("http://localhost:3000/api/cat");
+  const res = await fetch("https://cat-wiki-ten.vercel.app/api/cat");
   const breeds = await res.json();
   return {
     props: {
