@@ -130,7 +130,7 @@ const Home: NextPage<Props> = ({ breeds }) => {
             {breeds.length}+ Breeds For you{" "}
             <span className="md:block">to discover</span>
           </h2>
-          <Link href="/">
+          <Link href={"/cats?page=0"}>
             <a className="flex items-center gap-2 text-xs text-black/60 font-bold">
               SEE MORE
               <svg
@@ -237,7 +237,7 @@ const Home: NextPage<Props> = ({ breeds }) => {
 };
 
 export const getStaticProps = async () => {
-  const res = await fetch("http://localhost:3000/api/cats");
+  const res = await fetch("http://localhost:3000/api/cat");
   const breeds = await res.json();
   return {
     props: {
