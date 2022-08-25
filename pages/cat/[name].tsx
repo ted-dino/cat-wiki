@@ -41,6 +41,8 @@ const Index: NextPage<Props> = ({ image, cat }) => {
             alt="meow"
             width={371}
             height={371}
+            objectPosition="center"
+            objectFit="cover"
             className="rounded-3xl"
             placeholder="blur"
             blurDataURL="/fallbackImg.webp"
@@ -80,11 +82,13 @@ const Index: NextPage<Props> = ({ image, cat }) => {
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 place-items-start gap-y-2 lg:gap-y-8">
           {catImage.slice(1, 9).map((cat) => (
-            <div key={cat.id} className="grid place-content-center">
+            <div key={cat.id} className="grid place-content-center ">
               <Image
                 src={`${cat.url ? cat.url : "/fallbackImg.webp"}`}
                 width={278}
                 height={278}
+                objectFit="cover"
+                objectPosition="center"
                 className="rounded-3xl"
               />
             </div>
