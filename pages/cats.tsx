@@ -154,9 +154,11 @@ const Cats = ({ noOfPages, cats }: Props) => {
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const page = context.query.page ? context.query.page : 0;
   const [noOfPages, cats] = await Promise.all([
-    fetch("https://cat-wiki-ten.vercel.app/api/cat").then((res) => res.json()),
-    fetch(`https://cat-wiki-ten.vercel.app/api/cats/${page}`).then((res) =>
+    fetch("https://api.thecatapi.com/v1/breeds?attach_breed=0").then((res) =>
       res.json()
+    ),
+    fetch(`https://api.thecatapi.com/v1/breeds?limit=3&page=${page}`).then(
+      (res) => res.json()
     ),
   ]);
 
