@@ -10,12 +10,11 @@ interface Props {
 }
 
 const Index: NextPage<Props> = ({ image, cat }) => {
-  if (!image && !cat) {
+  if (!image || !cat) {
     return <h1>Loading..</h1>;
   }
 
   const {
-    id,
     name,
     description,
     temperament,
@@ -107,6 +106,12 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     ).then((res) => res.json()),
     fetch(`http://localhost:3000/api/cat/${name}`).then((res) => res.json()),
   ]);
+
+  if (cat.length === 0 || !cat) {
+    return {
+      notFound: true,
+    };
+  }
   return {
     props: {
       image,
